@@ -1,4 +1,15 @@
-version: 2.0
+# Use root/example as user/password credentials
+version: '3.1'
+services:
 
-service:
-  mysql:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./mysql-devel:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: hdock
+      MYSQL_USER: hdock
+      MYSQL_PASSWORD: hdock

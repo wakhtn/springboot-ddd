@@ -2,7 +2,6 @@ package com.hdock.app.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 public class BotController {
@@ -13,7 +12,7 @@ public class BotController {
       return "Hello Spring Boot2222";
    }
 
-   @RequestMapping("/test2")
+   @GetMapping("/bot/list")
    public String test2() {
       return "Hello Spring Boot Servlet 2";
    }

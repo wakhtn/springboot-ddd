@@ -8,7 +8,7 @@ public class RootController {
 
    @RequestMapping("/")
    public String rootControll() {
-      return "version 1.0.0. environement=d";
+      return "version 1.0.0";
    }
 
 }

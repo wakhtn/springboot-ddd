@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://172.20.0.2/hdock
+    username: hdock
+    password: hdock
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update

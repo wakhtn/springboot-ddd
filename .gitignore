@@ -1,3 +1,5 @@
+mysql-devel
+
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar

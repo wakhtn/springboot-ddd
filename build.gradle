@@ -28,7 +28,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	runtime('mysql:mysql-connector-java')
+	compile('mysql:mysql-connector-java')
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
 	//runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
