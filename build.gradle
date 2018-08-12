@@ -54,7 +54,8 @@ dependencies {
 	compile 'org.jooq:jooq:+'
     compile 'mysql:mysql-connector-java:+'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	//jooqRuntime 'org.jooq:jooq.util.mysql:+'
+
+    // jooq Generator用の依存関係を読み込む
     jooqRuntime 'mysql:mysql-connector-java:+'
     jooqRuntime 'javax.activation:activation:+'
     jooqRuntime 'javax.xml.bind:jaxb-api:+'

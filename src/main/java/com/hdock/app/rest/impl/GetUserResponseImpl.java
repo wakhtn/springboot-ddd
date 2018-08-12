@@ -2,9 +2,9 @@ package com.hdock.app.rest.impl;
 
 import java.util.Date;
 import com.hdock.app.beans.User;
-import com.hdock.app.rest.ErrorResponse;
+import com.hdock.app.rest.Response;
 
-public class GetUserResponseImpl extends ErrorResponse{
+public class GetUserResponseImpl extends Response{
   private long id;
   private String userName;
   private String mailAddr;

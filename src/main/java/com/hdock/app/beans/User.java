@@ -15,7 +15,15 @@ import javax.persistence.Table;
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  private Long id;
+
+  public Long getId() {
+    return this.id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
   @Column(length = 50)
   private String mailAddr;
   @Column(length = 35)
@@ -47,13 +55,6 @@ public class User {
 
   public void setUpDate(Date upDate) {
     this.upDate = upDate;
-  }
-
-  /**
-   * @return the id
-   */
-  public long getId() {
-    return id;
   }
 
   /**
