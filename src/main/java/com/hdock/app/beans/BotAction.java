@@ -1,4 +1,4 @@
-package com.hdock.app.domain.entities;
+package com.hdock.app.beans;
 
 import java.util.Date;
 
@@ -13,4 +13,6 @@ public class BotAction {
    private long Id;
    private long botId;
    private long userId;
+   private Date createDate;
+   private Date upDate;
 }

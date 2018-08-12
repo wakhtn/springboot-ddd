@@ -1,4 +1,4 @@
-package com.hdock.app.domain.entities;
+package com.hdock.app.beans;
 
 import java.util.Date;
 
