@@ -25,13 +25,19 @@ repositories {
 
 buildscript {
 	repositories {
-        jcenter()
-        mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
     }
 	 dependencies {
         // jooqのGradleプラグイン
-        classpath 'nu.studer:gradle-jooq-plugin:1.0.5'
-		  classpath 'mysql:mysql-connector-java:+'
+        classpath 'nu.studer:gradle-jooq-plugin:3.0.0'
+		classpath 'mysql:mysql-connector-java:+'
+        // Jooq Generatorのランタイム依存
+        classpath 'javax.xml.bind:jaxb-api:2.3.0'
+        classpath 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+        classpath 'com.sun.xml.bind:jaxb-impl:2.3.0.1'
+        classpath 'javax.activation:activation:1.1.1'
     }
 }
 
@@ -46,9 +52,14 @@ dependencies {
 	compile('mysql:mysql-connector-java')
 	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
 	compile 'org.jooq:jooq:+'
-   compile 'mysql:mysql-connector-java:+'
-	//runtime('org.springframework.boot:spring-boot-devtools')
+    compile 'mysql:mysql-connector-java:+'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	//jooqRuntime 'org.jooq:jooq.util.mysql:+'
+    jooqRuntime 'mysql:mysql-connector-java:+'
+    jooqRuntime 'javax.activation:activation:+'
+    jooqRuntime 'javax.xml.bind:jaxb-api:+'
+    jooqRuntime 'com.sun.xml.bind:jaxb-core:+'
+    jooqRuntime 'com.sun.xml.bind:jaxb-impl:+'
 }
 
 jooq {
@@ -60,9 +71,8 @@ jooq {
             password = 'hdock'
         }
         generator {
-            name = 'org.jooq.util.DefaultGenerator'
             database {
-                name = 'org.jooq.util.mysql.MySQLDatabase'
+                name = 'org.jooq.meta.mysql.MySQLDatabase'
                 includes = '.*'
                 excludes = ''
             }

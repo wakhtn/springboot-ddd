@@ -8,7 +8,6 @@ import com.hdock.app.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.jooq.DSLContext;
-import static com.hdock.jooq.hdock.tables.MUser.M_USER;
 
 public class UserEntity {
    @Autowired
@@ -36,9 +35,10 @@ public class UserEntity {
    }
 
    public static List<UserEntity> referAllJooq() {
-      return dslContext.select().from(M_USER).fetch().into(User.class).stream().map(user -> {
-         return new UserEntity(user);
-      }).collect(Collectors.toList());
+      return null;
+      //return dslContext.select().from(M_USER).fetch().into(User.class).stream().map(user -> {
+      //   return new UserEntity(user);
+      //}).collect(Collectors.toList());
    }
 
    public void append() {
