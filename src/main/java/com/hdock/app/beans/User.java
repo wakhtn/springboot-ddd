@@ -30,6 +30,16 @@ public class User {
   private String userName;
   @Column(length = 20)
   private String password;
+
+  public User() {
+  }
+
+
+  public User(String mailAddr, String userName, String password) {
+    this.mailAddr = mailAddr;
+    this.userName = userName;
+    this.password = password;
+  }
   private Date createDate;
   private Date upDate;
 

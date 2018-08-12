@@ -2,17 +2,32 @@ package com.hdock.app.domain.entities;
 
 import com.hdock.app.beans.User;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.hdock.app.repository.UserRepository;
+
 
 public class UserEntity {
    private User user = null;
 
    public UserEntity(User user) {
       this.setUser(user);
+   }
+   public UserEntity() {
+
+   }
+   public boolean appendUser(UserRepository userRepository,User user) {
+      this.user = user;
+      this.user.setCreateDate(new Date());
+      this.user.setUpDate(new Date());
+      return save(userRepository);
+   }
+
+   public boolean save(UserRepository userRepository) {
+      userRepository.save(this.user);
+      return true;
    }
 
    /**
